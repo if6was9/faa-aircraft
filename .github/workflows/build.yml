@@ -15,5 +15,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+      - name: install duckdb
+        run: curl https://install.duckdb.org | sh
       - name: build
         run: ./build.sh
