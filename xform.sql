@@ -59,7 +59,7 @@ alter table reserved rename "EXP DATE" to EXP_DATE;
 alter table reserved rename "PURGE DATE" to PURGE_DATE;
 alter table reserved rename "N-NUM-CHG" to N_NUM_CHG;
 
-update reserved set N_NUMBER=trim(N_NUMBER),
+update reserved set N_NUMBER=trim(upper(N_NUMBER)),
 REGISTRANT=trim(registrant),
 STREET=trim(STREET),
 STREET2=trim(STREET2),
@@ -70,7 +70,7 @@ N_NUM_CHG=trim(N_NUM_CHG),
 TR=trim(TR),
 EXP_DATE=trim(EXP_DATE);
 
-
+update reserved set N_NUMBER=concat('N',N_NUMBER) where N_NUMBER is not null and N_NUMBER not like 'N%';
 
 ########
 ######## ENGINE

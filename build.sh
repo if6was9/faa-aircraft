@@ -39,7 +39,7 @@ duckdb temp.ddb -f xform.sql
 
 
 duckdb temp.ddb -c "copy (select * from acftref) to 'output/acftref.csv'"
-duckdb temp.ddb -c "copy (select * from master) to 'output/master.csv'"
+duckdb temp.ddb -c "copy (select * from master order by N_NUMBER) to 'output/master.csv'"
 duckdb temp.ddb -c "copy (select * from engine) to 'output/engine.csv'"
 duckdb temp.ddb -c "copy (select * from reserved) to 'output/reserved.csv'"
 
