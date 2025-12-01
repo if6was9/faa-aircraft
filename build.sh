@@ -24,7 +24,7 @@ mkdir -p output
 cd temp
 
 echo "Fetching ${AIRCRAFT_URL}..."
-curl -H "User-agent: Mozilla" -o aircraft.zip ${AIRCRAFT_URL}
+curl --silent -H "User-agent: Mozilla" -o aircraft.zip ${AIRCRAFT_URL}
 
 unzip -q aircraft.zip
 #rm *.pdf
@@ -61,3 +61,6 @@ echo "Writing CSV files..."
 echo
 
 find ./output -type f
+
+echo
+echo "Done."
