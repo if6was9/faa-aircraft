@@ -2,8 +2,14 @@
 
 set -e
 
-export PATH='/home/runner/.duckdb/cli/latest':$PATH
+
+
 DUCKDB=${DUCKDB-"duckdb"}
+if [[ -x /home/runner/.duckdb/cli/latest ]]; then
+    export DUCKDB=/home/runner/.duckdb/cli/latest/duckdb
+fi
+
+
 AIRCRAFT_URL="https://registry.faa.gov/database/ReleasableAircraft.zip"
 
 
