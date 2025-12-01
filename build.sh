@@ -56,4 +56,8 @@ ${DUCKDB} temp.ddb -c "copy (select * from master order by N_NUMBER) to 'output/
 ${DUCKDB} temp.ddb -c "copy (select * from engine) to 'output/engine.csv'"
 ${DUCKDB} temp.ddb -c "copy (select * from reserved) to 'output/reserved.csv'"
 
+
+echo "Writing CSV files..."
+echo
+
 find ./output -type f
